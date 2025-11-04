@@ -1,0 +1,20 @@
+
+// climate.js - fetches basic weather from Open-Meteo for central Brazil coordinates
+async function loadClimate(){
+  const el = document.getElementById('climateContent');
+  try{
+    // central Brazil coords (approx)
+    const lat = -15.0, lon = -55.0;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,precipitation`;
+    const r = await fetch(url);
+    if(!r.ok){ el.textContent = 'Não foi possível carregar clima.'; return; }
+    const j = await r.json();
+    const cw = j.current_weather;
+    el.innerHTML = `<div><strong>Condição (código):</strong> ${cw.weathercode || 'N/A'}</div>
+      <div><strong>Temperatura:</strong> ${cw.temperature} °C</div>
+      <div><strong>Velocidade do vento:</strong> ${cw.windspeed} m/s</div>`;
+  }catch(e){
+    el.textContent = 'Erro ao obter clima.';
+  }
+}
+window.addEventListener('load', loadClimate);

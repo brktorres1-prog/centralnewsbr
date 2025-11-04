@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CON - Central Operacional News</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <img src="assets/logo.svg" alt="CON Logo" class="logo" />
+      <div class="logo-text">
+        <div class="site-name">Central Operacional News</div>
+        <div id="datetime" class="datetime">--/--/---- --:--:--</div>
+      </div>
+    </div>
+    <div class="topbar-center">
+      <input id="searchInput" type="text" placeholder="Buscar notícia..." />
+    </div>
+    <div class="topbar-right">
+      <button id="downloadCsv">Baixar CSV</button>
+      <button id="refreshBtn">Atualizar</button>
+      <button id="mapBtn">Mapa</button>
+    </div>
+  </header>
+
+  <div class="filters-row">
+    <div class="filters-left">
+      <select id="typeFilter">
+        <option value="all">Todos os Tipos</option>
+        <option>Acidente</option>
+        <option>Roubo / Furto</option>
+        <option>Trânsito / Lentidão</option>
+        <option>Interdição</option>
+        <option>Portos / Marítimo</option>
+        <option>Leis / Regulação</option>
+        <option>Sindicatos / Greve</option>
+      </select>
+      <select id="regionFilter">
+        <option value="all">Todas as Regiões</option>
+        <option>Sudeste</option>
+        <option>Sul</option>
+        <option>Centro-Oeste</option>
+        <option>Norte</option>
+        <option>Nordeste</option>
+      </select>
+      <select id="roadFilter">
+        <option value="all">Todas as Rodovias</option>
+      </select>
+    </div>
+    <div class="filters-right stats">
+      <div class="stat"><div class="stat-title">Total</div><div id="stat-total" class="stat-value">0</div></div>
+      <div class="stat"><div class="stat-title">Acidentes</div><div id="stat-acidentes" class="stat-value">0</div></div>
+      <div class="stat"><div class="stat-title">Interdições</div><div id="stat-interdicoes" class="stat-value">0</div></div>
+      <div class="stat"><div class="stat-title">Trânsito</div><div id="stat-transito" class="stat-value">0</div></div>
+      <div class="stat"><div class="stat-title">Roubo / Furto</div><div id="stat-roubo" class="stat-value">0</div></div>
+    </div>
+  </div>
+
+  <main class="main">
+    <section class="news-section">
+      <h2>Últimas notícias</h2>
+      <div id="last-collection" class="last-collection">Última coleta: -- • 0 itens</div>
+      <div id="newsList" class="news-list"></div>
+    </section>
+
+    <aside class="side">
+      <div class="card climate-card">
+        <h3>Situação Climática</h3>
+        <div id="climateContent">Carregando clima...</div>
+      </div>
+
+      <div class="card map-card">
+        <h3>Mapa Rodoviário (BRs)</h3>
+        <div id="map" style="height:240px;"></div>
+      </div>
+
+      <div class="card phones-card">
+        <h3>Telefones úteis</h3>
+        <pre>
+Corpo de Bombeiros — 193
+Polícia Civil — 181
+Polícia Militar — 190
+SAMU — 192
+Ambipar — 0800-123-456
+PRF — 191
+Defesa Civil — 199
+        </pre>
+      </div>
+
+      <div class="card concession-card">
+        <h3>Ver Concessionárias</h3>
+        <ul>
+          <li><a href="#" target="_blank">CCR AutoBAn</a></li>
+          <li><a href="#" target="_blank">CCR RIO-SP</a></li>
+          <li><a href="#" target="_blank">CCR AutoVias</a></li>
+          <li><a href="#" target="_blank">Ecovias (Santos/Imigrantes)</a></li>
+          <li><a href="#" target="_blank">Arteris</a></li>
+          <li><a href="#" target="_blank">Transbrasiliana (BR-153)</a></li>
+          <li><a href="#" target="_blank">Eco050 (BR-050)</a></li>
+          <li><a href="#" target="_blank">Ecovias do Cerrado (BR-365)</a></li>
+        </ul>
+      </div>
+
+    </aside>
+  </main>
+
+  <footer class="footer">
+    CON - Centro Operacional de News - Torres — Fontes públicas • Protótipo
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="news.js"></script>
+  <script src="climate.js"></script>
+</body>
+</html>

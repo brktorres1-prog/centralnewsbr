@@ -1,0 +1,60 @@
+{
+  "categories": {
+    "Acidente": [
+      "acidente",
+      "colisão",
+      "batida",
+      "tombamento",
+      "capotou",
+      "capotamento"
+    ],
+    "Roubo / Furto": [
+      "roubo",
+      "furto",
+      "roubo de carga",
+      "assalto",
+      "caminhão furtado",
+      "carga roubada"
+    ],
+    "Trânsito / Lentidão": [
+      "trânsito",
+      "lentidão",
+      "engarrafamento",
+      "bloqueio",
+      "interdição",
+      "retorno lento"
+    ],
+    "Interdição": [
+      "pista interditada",
+      "interditado",
+      "interdição",
+      "bloqueio total",
+      "faixa bloqueada"
+    ],
+    "Portos / Marítimo": [
+      "porto",
+      "navio",
+      "cais",
+      "embarque",
+      "descarga",
+      "terminal portuário"
+    ],
+    "Leis / Regulação": [
+      "ANTT",
+      "DNIT",
+      "lei",
+      "decreto",
+      "resolução",
+      "regulamentação",
+      "frete mínimo"
+    ],
+    "Sindicatos / Greve": [
+      "sindicato",
+      "greve",
+      "paralisação",
+      "manifestação",
+      "assembleia"
+    ]
+  },
+  "update_interval_minutes": 10
+}
