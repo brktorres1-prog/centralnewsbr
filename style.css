@@ -36,6 +36,9 @@ body{margin:0;background:var(--page-side);color:var(--text)}
 .news-desc{color:var(--blue-medium);font-size:14px;margin-top:6px}
 .news-meta{font-size:12px;color:#666;margin-top:6px}
 
+.analytics{margin-top:18px;background:#fafafa;padding:12px;border-radius:6px}
+.analytics canvas{width:100% !important;max-height:220px;margin-top:8px}
+
 .side{width:360px;display:flex;flex-direction:column;gap:12px}
 .card{background:var(--blue-light);padding:12px;border-radius:8px}
 .card h3{margin:0 0 8px 0;color:var(--blue-dark)}

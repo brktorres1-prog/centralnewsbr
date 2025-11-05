@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CON - Central Operacional News</title>
+  <title>CON PRO - Central Operacional News</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -22,6 +23,7 @@
     </div>
     <div class="topbar-right">
       <button id="downloadCsv">Baixar CSV</button>
+      <button id="exportPdf">Exportar PDF</button>
       <button id="refreshBtn">Atualizar</button>
       <button id="mapBtn">Mapa</button>
     </div>
@@ -65,17 +67,22 @@
       <h2>Últimas notícias</h2>
       <div id="last-collection" class="last-collection">Última coleta: -- • 0 itens</div>
       <div id="newsList" class="news-list"></div>
+      <section class="analytics">
+        <h3>Análises e Indicadores</h3>
+        <canvas id="chartType" height="120"></canvas>
+        <canvas id="chartRegion" height="120"></canvas>
+      </section>
     </section>
 
     <aside class="side">
       <div class="card climate-card">
         <h3>Situação Climática</h3>
-        <div id="climateContent">Carregando clima...</div>
+        <div id="climateContent">Carregando clima (média Brasil)...</div>
       </div>
 
       <div class="card map-card">
         <h3>Mapa Rodoviário (BRs)</h3>
-        <div id="map" style="height:240px;"></div>
+        <div id="map" style="height:260px;"></div>
       </div>
 
       <div class="card phones-card">
@@ -109,10 +116,14 @@ Defesa Civil — 199
   </main>
 
   <footer class="footer">
-    CON - Centro Operacional de News - Torres — Fontes públicas • Protótipo
+    CON - Centro Operacional de News - Torres — Fontes públicas • Protótipo • Versão PRO 2.0
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="charts.js"></script>
+  <script src="alerts.js"></script>
+  <script src="export.js"></script>
+  <script src="map.js"></script>
   <script src="news.js"></script>
   <script src="climate.js"></script>
 </body>
